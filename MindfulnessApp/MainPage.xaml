@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindfulnessApp.MainPage">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Center">
+
+            <!-- Title -->
+            <Label 
+                Text="Welcome to Blockhead No More"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center"
+                Margin="0,20,0,0"/>
+
+            <!-- Description/Prompt -->
+            <Label 
+                Text="Your Mindfulness AI!"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="Center"
+                Margin="0,0,0,20"/>
+
+            <!-- Quick Topics -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Button x:Name="StressButton"
+                        Text="Stress Relief"
+                        Clicked="OnTopicClicked"
+                        BackgroundColor="#7FB3D5"
+                        TextColor="White"/>
+                <Button x:Name="MeditationButton"
+                        Text="Meditation"
+                        Clicked="OnTopicClicked"
+                        BackgroundColor="#7FB3D5"
+                        TextColor="White"/>
+                <Button x:Name="BreathingButton"
+                        Text="Breathing"
+                        Clicked="OnTopicClicked"
+                        BackgroundColor="#7FB3D5"
+                        TextColor="White"/>
+            </HorizontalStackLayout>
+
+            <!-- Query Input -->
+            <Border BackgroundColor="#BDC3C7" 
+                    Padding="15">
+                <Border.Shadow>
+                    <Shadow Brush="Black" Opacity="0.3" Radius="10" />
+                </Border.Shadow>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Entry x:Name="QueryEntry"
+                       Placeholder="What's on your mind today?"
+                       HeightRequest="50"
+                       TextColor="#2C3E50"/>
+            </Border>
+
+            <Button x:Name="SubmitButton"
+                    Text="Ask for Guidance"
+                    SemanticProperties.Hint="Submit your question for mindfulness guidance"
+                    Clicked="OnSubmitClicked"
+                    HorizontalOptions="Center"
+                    BackgroundColor="#3498DB"
+                    TextColor="White"/>
+
+            <!-- Response Area -->
+            <Border x:Name="ResponseFrame"
+                    IsVisible="false"
+                    BackgroundColor="#BDC3C7"
+                    Padding="20"
+                    
+                    Margin="0,20,0,20">
+                <Border.Shadow>
+                    <Shadow Brush="Black" Opacity="0.3" Radius="10" />
+                </Border.Shadow>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Label x:Name="ResponseLabel"
+                       TextColor="#2C3E50"
+                       LineBreakMode="WordWrap"/>
+            </Border>
+
+            <ActivityIndicator x:Name="LoadingIndicator" 
+                             IsRunning="false" 
+                             IsVisible="false"
+                             Color="#3498DB"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,40 @@
+# Visual Studio files
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.pdb
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# NuGet Packages
+*.nupkg
+packages/
+*.nuget.props
+*.nuget.targets
+
+# User-specific files
+*.rsuser
+*.userosscache
+*.sln.docstates
+
+# Secrets
+secrets.json
+*.secret
+*.secrets
+
+# MAUI specific
+.fake/
+.ionide/
+
+# macOS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
